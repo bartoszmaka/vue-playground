@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
-import TodoList from '@/components/TodoList'
+import Home from '@/pages/Home'
+import Todo from '@/pages/Todo'
+import Quiz from '@/pages/Quiz'
 
 Vue.use(Router)
 
@@ -10,12 +11,17 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Home,
     },
     {
       path: '/list',
-      name: 'TodoList',
-      component: TodoList
-    }
-  ]
+      name: 'Todo',
+      component: Todo,
+    },
+    {
+      path: '/quiz',
+      name: 'Quiz',
+      component: Quiz,
+    },
+  ],
 })
