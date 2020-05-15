@@ -1,17 +1,16 @@
 <template>
   <div>
     <span><strong>The Quiz</strong></span>
-    <span>Counter: {{ index + 1 }}/10</span>
+    <span>Counter: {{ currentQuestion + 1 }}/10</span>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Header',
-  props: {
-    index: {
-      type: Number,
-      required: true,
+  computed: {
+    currentQuestion () {
+      return this.$store.state.quiz.currentQuestion
     },
   },
 }

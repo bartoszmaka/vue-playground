@@ -18,13 +18,13 @@
     </section>
 
     <section class="quiz__buttons">
-      <button class="quiz__control -secondary" href="#" @click="back">
+      <button class="quiz__control -secondary" href="#" @click="previousQuestion">
         Back
       </button>
       <button class="quiz__control -primary" href="#" @click="checkAnswer">
         Submit
       </button>
-      <button class="quiz__control -secondary" href="#" @click="next">
+      <button class="quiz__control -secondary" href="#" @click="nextQuestion">
         Next
       </button>
     </section>
@@ -34,23 +34,10 @@
 <script>
 import shuffle from 'lodash/shuffle'
 import findIndex from 'lodash/findIndex'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'QuestionBox',
-  props: {
-    question: {
-      type: Object,
-      required: true,
-    },
-    next: {
-      type: Function,
-      required: true,
-    },
-    back: {
-      type: Function,
-      required: true,
-    },
-  },
   data: function () {
     return {
       answers: [],
@@ -59,7 +46,16 @@ export default {
       selected: null,
     }
   },
+  computed: {
+    question () {
+      return this.$store.state.quiz.questions[this.$store.state.quiz.currentQuestion]
+    },
+  },
   methods: {
+    ...mapActions([
+      'nextQuestion',
+      'previousQuestion',
+    ]),
     answerStyles: function (index) {
       return {
         '-selected': !this.checkPerformed && index === this.selected,
@@ -86,12 +82,12 @@ export default {
     },
   },
   watch: {
-    question () {
-      this.prepareQuestions()
+    question: {
+      immediate: true,
+      handler: function () {
+        this.prepareQuestions()
+      },
     },
-  },
-  mounted () {
-    this.prepareQuestions()
   },
 }
 </script>
