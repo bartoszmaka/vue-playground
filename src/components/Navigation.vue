@@ -3,6 +3,7 @@
     <router-link to="/">Home</router-link>
     <router-link to="/list">Todo List</router-link>
     <router-link to="/quiz">Quiz</router-link>
+    <router-link to="/slots">Slots</router-link>
   </nav>
 </template>
 

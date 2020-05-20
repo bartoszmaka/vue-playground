@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/pages/Home'
 import Todo from '@/pages/Todo'
 import Quiz from '@/pages/Quiz'
+import Slots from '@/pages/Slots'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/quiz',
       name: 'Quiz',
       component: Quiz,
+    },
+    {
+      path: '/slots',
+      name: 'Slots',
+      component: Slots,
     },
   ],
 })
