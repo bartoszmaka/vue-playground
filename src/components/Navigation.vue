@@ -4,6 +4,7 @@
     <router-link to="/list">Todo List</router-link>
     <router-link to="/quiz">Quiz</router-link>
     <router-link to="/slots">Slots</router-link>
+    <router-link to="/games/tictactoe">Tic Tac Toe</router-link>
   </nav>
 </template>
 
