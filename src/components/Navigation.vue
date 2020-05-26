@@ -5,6 +5,7 @@
     <router-link to="/quiz">Quiz</router-link>
     <router-link to="/slots">Slots</router-link>
     <router-link to="/games/tictactoe">Tic Tac Toe</router-link>
+    <router-link to="/requests">Requests</router-link>
   </nav>
 </template>
 

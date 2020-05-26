@@ -5,6 +5,7 @@ import Todo from '@/pages/Todo'
 import Quiz from '@/pages/Quiz'
 import Slots from '@/pages/Slots'
 import TicTacToe from '@/pages/TicTacToe'
+import Requests from '@/pages/Requests'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/games/tictactoe',
       name: 'TicTacToe',
       component: TicTacToe,
+    },
+    {
+      path: '/requests',
+      name: 'Requests',
+      component: Requests,
     },
   ],
 })
